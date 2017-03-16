@@ -1,0 +1,9 @@
+---
+NEXTCLOUDCLI_ENABLED: 'yes'
+
+NEXTCLOUDCLI_USER: user
+NEXTCLOUDCLI_PASS: pass
+NEXTCLOUDCLI_LOCALDIR: /tmp/nextcloud-sync
+NEXTCLOUDCLI_URL: https://my-nextcloud.com/remote.php/webdav/myfolder
+NEXTCLOUDCLI_INTERVAL: 30
+NEXTCLOUDCLI_HOSTUSER: nextcloud

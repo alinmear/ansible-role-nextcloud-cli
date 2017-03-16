@@ -1,0 +1,7 @@
+---
+- name: NEXTCLOUDCLI | docker-service
+  include: docker-service.yml
+  tags:
+    - nextcloudcli_setup
+  when:
+    NEXTCLOUDCLI_ENABLED == 'yes'

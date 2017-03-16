@@ -1,0 +1,20 @@
+---
+- name: "NEXTCLOUDCLI | dockerservice -  Deploy Docker Instance"
+  docker_service:
+    # pull: yes
+    project_name: "{{ NEXTCLOUDCLI_URL }}_{{ NEXTCLOUDCLI_USER }}"
+    definition:
+      version: '2'
+      services:
+        nextcloudcli:
+          image: idef1x/docker-owncloud-client:latest
+          restart: always
+          environment:
+            - LOCALDIR=/cloud_folder
+            - USER={{ NEXTCLOUDCLI_USER }}
+            - PASSWORD={{ NEXTCLOUDCLI_PASS  }}
+            - URL={{ NEXTCLOUDCLI_URL }}
+            - INTERVAL={{ NEXTCLOUDCLI_INTERVAL }}
+            - HOSTUSER={{ NEXTCLOUDCLI_HOSTUSER }}
+          volumes:
+            - "{{ NEXTCLOUDCLI_LOCALDIR }}:/cloud_folder"
